@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+git stash -qku
+./gradlew clean check
+# shellcheck disable=SC2034
+RESULT=$?
+git stash pop -q
+exit $RESULT
